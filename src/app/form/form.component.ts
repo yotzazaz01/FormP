@@ -8,16 +8,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
   formGroup : FormGroup;
-  constructor(private fb: FormBuilder) 
+  constructor(private formBulid: FormBuilder) 
    {
      
    }
 
   ngOnInit() {
-    this.formGroup = this.fb.group({
-      firstname:this.fb.control(''),
+    this.formGroup = this.formBulid.group({
+      firstName:this.formBulid.control(''),
       lastName:['']
     })
   }
-
+  onSubmit(form: FormGroup){
+    console.log(form);
+  }
 }

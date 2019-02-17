@@ -18,13 +18,14 @@ export class FormComponent implements OnInit {
     this.formGroup = this.formBulid.group({
       firstName:this.formBulid.control(''),
       lastName:[''],
-      EmAil:['']
+      EmAil:[''],
+      Age:['']
     })
   }
   onSubmit(form: FormGroup){
     console.log(form);
-    const {firstName,lastName,EmAil} = form.value;
-    const user = new User(firstName,lastName,EmAil)
-    console.log(User)
+    const {firstName,lastName,EmAil,Age} = form.value;
+    const user = new User(firstName,lastName,EmAil,Age);
+    console.log(User);
   }
 }
